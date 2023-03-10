@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="328dp"
+                android:height="279dp" />
+            <corners android:radius="9dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/profile_photo_place_holder" />
+</layer-list>

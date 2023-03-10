@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:indeterminateTint="@color/progress_bar_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mainMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_toolbar_main_menu_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/photoLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/photoLayout" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_toolbar_title_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/photoLayout"
+                    app:layout_constraintEnd_toStartOf="@+id/photoLayout"
+                    app:layout_constraintStart_toEndOf="@+id/mainMenu"
+                    app:layout_constraintTop_toTopOf="@+id/photoLayout" />
+
+                <FrameLayout
+                    android:id="@+id/photoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/home_toolbar_account_photo_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="16dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/photo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|top"
+                            tools:src="@mipmap/ic_launcher" />
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/locationButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/home_toolbar_account_location_menu_icon"
+                    android:text="@string/location_button_text"
+                    android:textAppearance="@style/home_toolbar_account_location_button_text_style"
+                    app:layout_constraintEnd_toEndOf="@id/photoLayout"
+                    app:layout_constraintStart_toStartOf="@+id/photoLayout"
+                    app:layout_constraintTop_toBottomOf="@id/photoLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <FrameLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="56dp"
+            android:background="@drawable/home_search_background"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <com.example.shopiapp.presentation.ui.views.HomeSearchAutoCompleteView
+                android:id="@+id/searchInputText"
+                style="@style/home_search_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:completionThreshold="1"
+                android:dropDownAnchor="@id/searchLayout"
+                android:gravity="center"
+                android:hint="@string/home_search_hint_text" />
+
+            <ProgressBar
+                android:id="@+id/searchLoadingIndicator"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/home_search_icon" />
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout"
+            tools:listitem="@layout/home_category_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_latest_collection_title"
+            android:textColor="#FF040402"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewAllLatestButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewAllLatestButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAllLatestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="11dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_latest_view_all_button_text"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categories"
+            tools:ignore="SmallSp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/latestCollection"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/viewAllLatestButton"
+            tools:listitem="@layout/home_latest_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_flash_sale_collection_title"
+            android:textColor="#FF040402"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewAllFlashSaleButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewAllFlashSaleButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAllFlashSaleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="11dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_flash_sale_view_all_button_text"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/latestCollection"
+            tools:ignore="SmallSp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flashSaleCollection"
+            android:layout_width="match_parent"
+            android:layout_height="221dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/viewAllFlashSaleButton"
+            tools:listitem="@layout/home_flash_sale_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_brands_collection_title"
+            android:textColor="#FF040402"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewAllBrandsButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewAllBrandsButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/viewAllBrandsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="11dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/home_brands_view_all_button_text"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flashSaleCollection"
+            tools:ignore="SmallSp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/brandsCollection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:paddingBottom="70dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/viewAllBrandsButton"
+            tools:listitem="@layout/home_latest_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

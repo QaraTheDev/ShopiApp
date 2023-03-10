@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tittle"
+            style="@style/login_sign_in_tittle_style"
+            android:src="@drawable/sign_in_tittle_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/inputLayouts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tittle">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameInputLayout"
+                style="@style/login_sign_in_input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstNameInputText"
+                    style="@style/login_sign_in_input_edit_text_style"
+                    android:hint="@string/sign_in_hint_first_name_input" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameInputLayout"
+                style="@style/login_sign_in_input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameInputText"
+                    style="@style/login_sign_in_input_edit_text_style"
+                    android:hint="@string/sign_in_hint_last_name_input" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInputLayout"
+                style="@style/login_sign_in_input_layout_style">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInputText"
+                    style="@style/login_sign_in_input_edit_text_style"
+                    android:hint="@string/sign_in_hint_email_inpul" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/signInButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="5dp"
+                android:src="@drawable/sign_in_button_icon" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/already_have_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/already_have_account_text"
+            android:textColor="#FF808080"
+            android:textSize="10sp"
+            app:fontFamily="@font/montserrat_medium"
+            app:layout_constraintStart_toStartOf="@+id/inputLayouts"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayouts"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/navigateToLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/sign_in_page_log_in_button_text"
+            android:textAllCaps="false"
+            android:textColor="#FF254FE6"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/already_have_account_text"
+            app:layout_constraintStart_toEndOf="@+id/already_have_account_text"
+            app:layout_constraintTop_toTopOf="@+id/already_have_account_text"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/googleAuthoriseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/sign_in_google_account_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayouts" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/googleAuthoriseAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/alarm_color"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/googleAuthoriseButton"
+            app:layout_constraintTop_toBottomOf="@+id/googleAuthoriseButton"
+            tools:ignore="SmallSp"
+            tools:text="Alarm text" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appleAuthoriseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/sign_in_apple_account_icon"
+            app:layout_constraintStart_toStartOf="@+id/googleAuthoriseButton"
+            app:layout_constraintTop_toBottomOf="@+id/googleAuthoriseButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appleAuthoriseAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/alarm_color"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/appleAuthoriseButton"
+            app:layout_constraintTop_toBottomOf="@+id/appleAuthoriseButton"
+            tools:ignore="SmallSp"
+            tools:text="Alarm text" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:indeterminateTint="@color/progress_bar_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

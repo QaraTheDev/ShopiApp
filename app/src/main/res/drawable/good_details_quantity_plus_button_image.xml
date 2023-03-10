@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/good_details_quantity_plus_minus_buttons_background" />
+    <item
+        android:width="20dp"
+        android:height="20dp"
+        android:drawable="@drawable/good_details_quantity_plus_button_icon"
+        android:gravity="center" />
+</layer-list>

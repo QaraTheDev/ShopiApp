@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_flash_sale_item_background" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/home_flas_sale_unknown_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/home_flash_sale_item_discount_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#FFFFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp"
+        tools:text="30% off" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/addToCartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/home_flash_sale_item_add_to_cart_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/poster"
+        app:layout_constraintEnd_toEndOf="@+id/poster" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/addToFavouritesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/home_flash_sale_item_favourites_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/addToCartButton"
+        app:layout_constraintEnd_toStartOf="@+id/addToCartButton"
+        app:layout_constraintTop_toTopOf="@+id/addToCartButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:background="@drawable/home_flash_sale_item_category_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:paddingStart="6dp"
+        android:paddingEnd="7dp"
+        android:textColor="#FF070604"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        tools:ignore="SmallSp"
+        tools:text="Games" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="start|center"
+        android:maxLines="2"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/category"
+        app:layout_constraintTop_toBottomOf="@+id/category"
+        tools:text="Play Station 5 console" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/price"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="start|center"
+        android:textColor="#FFFFFFFF"
+        android:textSize="10sp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/category"
+        tools:ignore="SmallSp"
+        tools:text="$ 180,000" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="63dp"
+    android:layout_height="59dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        tools:src="@drawable/home_categories_furniture_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:gravity="center"
+        android:textColor="#FFA6A7AB"
+        android:textSize="8sp"
+        app:fontFamily="@font/poppins_medium"
+        tools:text="@string/home_categories_furniture_title" />
+</FrameLayout>

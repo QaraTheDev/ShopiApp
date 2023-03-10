@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/progress_bar_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/posterViewPagerCardView"
+            android:layout_width="280dp"
+            android:layout_height="279dp"
+            app:cardCornerRadius="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/posterViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="42dp"
+            android:layout_height="95dp"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/posterViewPagerCardView"
+            app:layout_constraintEnd_toEndOf="@+id/posterViewPagerCardView"
+            app:layout_constraintStart_toEndOf="@+id/posterViewPagerCardView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFE5E9EF"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/good_details_like_shared_divider" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="17dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/good_details_like_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="17dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/good_details_shared_icon" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/postersTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="31dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/posterViewPagerCardView"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:maxWidth="186dp"
+            android:textColor="#FF161826"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postersTabLayout"
+            tools:text="New balance Sneakers" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="23dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FF161826"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/goodName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/goodName"
+            tools:text="$ 22,50" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/poppins"
+            android:maxWidth="231dp"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="@+id/goodName"
+            app:layout_constraintTop_toBottomOf="@+id/goodName"
+            tools:ignore="SmallSp"
+            tools:text="Features waterproof, fire, air resistant shoes. all changed when the country of fire attacked" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/good_details_rating_icon"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FF161826"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="@+id/goodDescription"
+            app:layout_constraintTop_toBottomOf="@+id/goodDescription"
+            tools:ignore="SmallSp"
+            tools:text="4.3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="@+id/goodRating"
+            app:layout_constraintStart_toEndOf="@id/goodRating"
+            app:layout_constraintTop_toTopOf="@+id/goodRating"
+            tools:ignore="SmallSp"
+            tools:text="(4000 reviews)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodColorVariants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/good_details_colors_title"
+            android:textColor="#FF737373"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/goodName"
+            app:layout_constraintTop_toBottomOf="@+id/goodRating"
+            tools:ignore="SmallSp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listColors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/goodColorVariants"
+            tools:itemCount="3"
+            tools:listitem="@layout/good_details_color_selector_item" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addToCartLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="25dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/good_details_add_to_cart_menu_background"
+            app:layout_constraintTop_toBottomOf="@+id/listColors" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goodsQuantityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/good_details_quantity_title"
+            android:textColor="#FF808080"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="@+id/addToCartLayout"
+            app:layout_constraintTop_toTopOf="@+id/addToCartLayout"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/goodsQuatityMinusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/good_details_quantity_minus_button_image"
+            app:layout_constraintStart_toStartOf="@+id/goodsQuantityTitle"
+            app:layout_constraintTop_toBottomOf="@+id/goodsQuantityTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/goodsQuantityPlusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/good_details_quantity_plus_button_image"
+            app:layout_constraintBottom_toBottomOf="@+id/goodsQuatityMinusButton"
+            app:layout_constraintStart_toEndOf="@+id/goodsQuatityMinusButton"
+            app:layout_constraintTop_toTopOf="@+id/goodsQuatityMinusButton" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="23dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/goodsQuantityPlusButton"
+            app:layout_constraintEnd_toEndOf="@+id/addToCartLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/good_details_quantity_add_to_cart_button_background" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/goodsAddToCartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/good_details_quantity_add_to_cart_button_title"
+                android:textColor="#FFFFFFFF"
+                android:textSize="8sp"
+                tools:ignore="SmallSp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="28dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="#FF99A0FF"
+                android:textSize="8sp"
+                tools:ignore="SmallSp"
+                tools:text="#2,500" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

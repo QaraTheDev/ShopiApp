@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="70dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/profile_toolbar_title_text"
+                android:textColor="#FF000000"
+                android:textSize="15sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/photoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_photo_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="30dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@mipmap/ic_launcher" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/changePhotoImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/profile_photo_change_button_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photoLayout" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameUserTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textColor="#FF3F3F3F"
+            android:textSize="15sp"
+            app:fontFamily="@font/montserrat_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changePhotoImageButton"
+            tools:text="Satria Adhi Pradana" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/uploadItemButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="2dp"
+            android:src="@drawable/profile_upload_item_button_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameUserTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tradeStoreButton"
+            style="@style/profile_menu_buttons_style"
+            android:layout_marginTop="14dp"
+            android:drawableStart="@drawable/profile_credit_card_picture"
+            android:drawableEnd="@drawable/profile_show_more_button_icon"
+            android:text="@string/profile_menu_trade_store_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadItemButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/paymentMethodButton"
+            style="@style/profile_menu_buttons_style"
+            android:drawableStart="@drawable/profile_credit_card_picture"
+            android:drawableEnd="@drawable/profile_show_more_button_icon"
+            android:text="@string/profile_menu_payment_method_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tradeStoreButton" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/balanceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/profile_credit_card_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paymentMethodButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/profile_menu_balance_text"
+            android:textColor="@color/profile_menu_text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/balanceIcon"
+            app:layout_constraintStart_toEndOf="@+id/balanceIcon"
+            app:layout_constraintTop_toTopOf="@+id/balanceIcon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/balanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/profile_menu_text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/balanceIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/balanceIcon"
+            tools:text="$ 1593" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tradeHistoryButton"
+            style="@style/profile_menu_buttons_style"
+            android:drawableStart="@drawable/profile_credit_card_picture"
+            android:drawableEnd="@drawable/profile_show_more_button_icon"
+            android:text="@string/profile_menu_trade_history_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/balanceIcon" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/restorePurchaseButton"
+            style="@style/profile_menu_buttons_style"
+            android:drawableStart="@drawable/profile_restore_purchase_picture"
+            android:drawableEnd="@drawable/profile_show_more_button_icon"
+            android:text="@string/profile_menu_restore_purchase_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tradeHistoryButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/helpButton"
+            style="@style/profile_menu_buttons_style"
+            android:drawableStart="@drawable/profile_help_picture"
+            android:text="@string/profile_menu_help_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/restorePurchaseButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logOutButton"
+            style="@style/profile_menu_buttons_style"
+            android:drawableStart="@drawable/profile_log_out_picture"
+            android:text="@string/profile_menu_log_out_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpButton" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/progress_bar_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
